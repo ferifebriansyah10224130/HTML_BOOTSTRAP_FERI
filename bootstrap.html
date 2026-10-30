@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Learning Project</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #0284c7;
+            --primary-blue-dark: #0369a1;
+            --page-bg-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            --card-bg: #faf8f8;
+            --code-bg: #1e293b;
+            --pink-gradient: linear-gradient(135deg, #6f4fff 0%, #ede7fc 100%);
+            --purple-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --text-dark: #00248f;
+        }
+
+        body {
+            background: var(--page-bg-gradient);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+        }
+
+        .custom-page-container {
+            max-width: 900px;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-header {
+            background-color: var(--card-bg);
+            border-top: 5px solid var(--primary-blue);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .main-header:hover, .section-card:hover, .congrats-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.20) !important;
+        }
+
+        .section-card h2 {
+            font-size: 1.35rem;
+            color: var(--text-dark);
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .box-pink {
+            background: var(--pink-gradient);
+            border: 1px solid #fbcfe8;
+            border-radius: 12px;
+        }
+
+        .congrats-card {
+            background: var(--purple-gradient);
+            color: #f8fafc;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .code-block-container {
+            position: relative;
+        }
+        .code-block-container::after {
+            content: "HTML";
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            background: #e11d48;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            color: #f1f5f9;
+            font-family: 'Fira Code', Consolas, Monaco, monospace;
+            font-size: 0.9rem;
+            border-radius: 12px;
+        }
+
+        code:not(pre code) {
+            font-family: 'Fira Code', Consolas, Monaco, monospace;
+            background-color: #f1f5f9;
+            color: #0284c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .table-custom th {
+            background-color: var(--primary-blue) !important;
+            color: white !important;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            border: none;
+            transition: all 0.15s ease-in-out;
+        }
+        .btn-custom:hover {
+            background-color: var(--primary-blue-dark);
+            color: white;
+        }
+        .btn-custom:active {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -2px rgba(0, 0, 0, 0.15);
+        }
+
+        .text-custom-dark {
+            color: #334155;
+        }
+    </style>
+</head>
+<body class="py-5 px-3">
+
+    <div class="container custom-page-container p-4 p-md-5 my-3 d-flex flex-column gap-4">
+        
+        <header class="main-header text-center p-4 p-md-5 rounded-4 mb-2">
+            <h1 class="fw-bold mb-2">🌐 HTML Learning Project</h1>
+            <p class="text-secondary mb-0 fs-6">Master the Building Blocks of the Web</p>
+        </header>
+
+        <section class="section-card rounded-3 p-4">
+            <h2 class="fw-bold mb-3">🚀 What is HTML?</h2>
+            <p class="text-custom-dark"><b>HTML (HyperText Markup Language)</b> is the standard markup language for creating web pages. Think of it as the skeleton or foundation of every website you visit.</p>
+
+            <div class="box-pink p-3 p-md-4 my-3">
+                <p class="mb-2"><b>Key Points:</b></p>
+                <ul class="mb-0 ps-3 text-custom-dark">
+                    <li><b>HyperText:</b> Text with links to other texts</li>
+                    <li><b>Markup:</b> A way to annotate text to show structure and meaning</li>
+                    <li><b>Language:</b> A set of rules and syntax for creating web content</li>
+                </ul>
+            </div>
+
+            <h3 class="h5 mt-4 mb-2 fw-bold">🏗️ How HTML Works</h3>
+            <p class="text-custom-dark">HTML uses <b>tags</b> to define elements. Tags are keywords surrounded by angle brackets like <code>&lt;tagname&gt;</code>. Most tags come in pairs:</p>
+
+            <div class="code-block-container my-3">
+                <pre class="p-3 m-0"><code>&lt;tagname&gt;Content goes here&lt;/tagname&gt;
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section-card rounded-3 p-4">
+            <h2 class="fw-bold mb-3">📋 Basic HTML Structure</h2>
+            <p class="text-custom-dark">Every HTML document follows this basic structure:</p>
+
+            <div class="code-block-container my-3">
+                <pre class="p-3 m-0"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <div class="box-pink p-3 p-md-4 my-3">
+                <h4 class="h6 fw-bold mb-2">Structure Breakdown:</h4>
+                <ul class="mb-0 ps-3 text-custom-dark">
+                    <li><b>!DOCTYPE html:</b> Tells the browser this is HTML5</li>
+                    <li><b>html:</b> Root element of the page</li>
+                    <li><b>head:</b> Contains metadata (not visible on page)</li>
+                    <li><b>body:</b> Contains visible content</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-card rounded-3 p-4">
+            <h2 class="fw-bold mb-3">🏷️ Essential HTML Tags</h2>
+            
+            <div class="table-responsive my-3">
+                <table class="table table-bordered table-striped align-middle table-custom m-0">
+                    <thead>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Purpose</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;h1&gt; - &lt;h6&gt;</code></td>
+                            <td>Headings (largest to smallest)</td>
+                            <td><code>&lt;h1&gt;Main Title&lt;/h1&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;p&gt;</code></td>
+                            <td>Paragraphs</td>
+                            <td><code>&lt;p&gt;This is text&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;a&gt;</code></td>
+                            <td>Links</td>
+                            <td><code>&lt;a href="url"&gt;Link text&lt;/a&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;img&gt;</code></td>
+                            <td>Images</td>
+                            <td><code>&lt;img src="image.jpg" alt="Description"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;div&gt;</code></td>
+                            <td>Container/section</td>
+                            <td><code>&lt;div&gt;Content here&lt;/div&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</code></td>
+                            <td>Lists</td>
+                            <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="h5 mt-4 mb-3 fw-bold">🎯 Live Examples:</h3>
+            <div class="p-3 p-md-4 bg-light rounded-3 border">
+                <h1 class="text-center h3 my-3">This is an H1 heading</h1>
+                <h2 class="h4 text-start border-0 mb-2">This is an H2 heading</h2>
+                <h3 class="h5 text-start border-0 mb-3">This is an H3 heading</h3>
+                <p>This is a paragraph with <b>bold text</b> and <i>italic text.</i></p>
+                <p>Here's a <a href="https://www.google.com" target="_blank" class="text-decoration-none" style="color: var(--primary-blue);">sample link.</a></p>
+
+                <p class="mb-1"><b>Unordered List:</b></p>
+                <ul class="mb-3 ps-3">
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+
+                <p class="mb-1"><b>Ordered List:</b></p>
+                <ol class="mb-0 ps-3">
+                    <li>Step one</li>
+                    <li>Step two</li>
+                    <li>Step three</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section-card rounded-3 p-4">
+            <h2 class="fw-bold mb-3">📝 HTML Forms</h2>
+            <p class="text-custom-dark">Forms allow users to input data. Here's a working example:</p>
+
+            <form class="p-4 bg-light rounded-3 border border-dashed d-flex flex-column gap-3">
+                <div>
+                    <label for="name" class="form-label fw-semibold">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                </div>
+
+                <div>
+                    <label for="email" class="form-label fw-semibold">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                </div>
+
+                <div>
+                    <label for="subject" class="form-label fw-semibold">Subject:</label>
+                    <select class="form-select" id="subject" name="subject">
+                        <option value="">-- Choose Option --</option>
+                        <option value="question">Question</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="support">Support</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="form-label fw-semibold">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Type your message..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-custom px-4 py-2 align-self-start">Submit Form</button>
+            </form>
+        </section>
+
+        <section class="section-card rounded-3 p-4">
+            <h2 class="fw-bold mb-3">🎨 HTML Attributes</h2>
+            <p class="text-custom-dark">Attributes provide additional information about HTML elements:</p>
+
+            <div class="code-block-container my-3">
+                <pre class="p-3 m-0"><code>&lt;!-- Common attributes --&gt;
+&lt;img src="photo.jpg" alt="A beautiful sunset" width="300" height="200"&gt;
+&lt;a href="https://example.com" target="_blank" title="Visit Example"&gt;Click here&lt;/a&gt;
+&lt;div class="container" id="main-content" style="color: blue;"&gt;Content&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="box-pink p-3 p-md-4 my-3">
+                <h3 class="h6 fw-bold mb-2">Important Attributes:</h3>
+                <ul class="mb-0 ps-3 text-custom-dark">
+                    <li><b>id:</b> Unique identifier for an element</li>
+                    <li><b>class:</b> Groups elements for styling</li>
+                    <li><b>src:</b> Source file for images, videos, etc.</li>
+                    <li><b>href:</b> URL for links</li>
+                    <li><b>alt:</b> Alternative text for images</li>
+                    <li><b>style:</b> Inline CSS styling</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-card rounded-3 p-4">
+            <h2 class="fw-bold mb-3">📊 Tables in HTML</h2>
+            <p class="text-custom-dark">Tables organize data in rows and columns:</p>
+
+            <div class="code-block-container my-3">
+                <pre class="p-3 m-0"><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+            &lt;th&gt;City&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;New York&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <h4 class="h6 fw-bold mt-4 mb-2">Sample Table:</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle table-custom m-0">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Subject</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alice Johnson</td>
+                            <td>Mathematics</td>
+                            <td>A+</td>
+                            <td>✅ Passed</td>
+                        </tr>
+                        <tr>
+                            <td>Bob Smith</td>
+                            <td>Physics</td>
+                            <td>B</td>
+                            <td>✅ Passed</td>
+                        </tr>
+                        <tr>
+                            <td>Carol Davis</td>
+                            <td>Chemistry</td>
+                            <td>A</td>
+                            <td>✅ Passed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section-card box-pink rounded-3 p-4">
+            <h2 class="fw-bold mb-3">💻 Practice Exercises</h2>
+            
+            <h4 class="h6 fw-bold mb-2">Beginner Tasks:</h4>
+            <ol class="mb-3 ps-3 text-custom-dark">
+                <li>Create a basic HTML page with a title, heading, and paragraph</li>
+                <li>Add an image with alt text</li>
+                <li>Create a list of your favorite movies</li>
+                <li>Build a simple table with your weekly schedule</li>
+            </ol>
+
+            <h4 class="h6 fw-bold mb-2">Intermediate Tasks:</h4>
+            <ol class="mb-0 ps-3 text-custom-dark">
+                <li>Create a contact form with different input types</li>
+                <li>Build a navigation menu with links</li>
+                <li>Design a simple blog post layout</li>
+                <li>Create a photo gallery grid</li>
+            </ol>
+        </section>
+
+        <section class="section-card rounded-3 p-4">
+            <h2 class="fw-bold mb-3">🗂️ Project Structure</h2>
+            <p class="text-custom-dark">Here's how to organize your HTML project:</p>
+
+            <div class="code-block-container my-3">
+                <pre class="p-3 m-0"><code>my-website/
+├── index.html        (Main page)
+├── about.html        (About page)
+├── contact.html      (Contact page)
+│
+├── css/
+│   └── styles.css    (CSS stylesheets)
+│
+├── js/
+│   └── script.js     (JavaScript files)
+│
+└── images/
+    ├── logo.png
+    ├── hero-image.jpg
+    └── gallery/
+        ├── photo1.jpg
+        └── photo2.jpg</code></pre>
+            </div>
+        </section>
+
+        <section class="section-card box-pink rounded-3 p-4">
+            <h2 class="fw-bold mb-3">🎯 Next Steps in Your Learning Journey</h2>
+            <p class="text-custom-dark">After mastering HTML, continue with:</p>
+            <ul class="mb-0 ps-3 text-custom-dark">
+                <li><b>CSS (Cascading Style Sheets):</b> Style your HTML elements</li>
+                <li><b>JavaScript:</b> Add interactivity and dynamic behavior</li>
+                <li><b>Responsive Design:</b> Make websites work on all devices</li>
+                <li><b>Web Accessibility:</b> Make websites usable for everyone</li>
+                <li><b>Modern Frameworks:</b> React, Vue.js, or Angular</li>
+            </ul>
+        </section>
+
+        <section class="section-card box-pink rounded-3 p-4">
+            <h2 class="fw-bold mb-3">🔧 Development Tools</h2>
+            <h4 class="h6 fw-bold mb-2">Recommended Tools:</h4>
+            <ul class="mb-0 ps-3 text-custom-dark">
+                <li><b>Text Editors:</b> VS Code, Sublime Text, Atom</li>
+                <li><b>Browsers:</b> Chrome DevTools, Firefox Developer Tools</li>
+                <li><b>Version Control:</b> Git and GitHub</li>
+                <li><b>Online Editors:</b> CodePen, JSFiddle, Repl.it</li>
+            </ul>
+        </section>
+
+        <footer class="congrats-card p-4 p-md-5 text-center">
+            <h2 class="fw-bold text-white border-0 mb-3">🎉 Congratulations!</h2>
+            <p class="mb-3 text-white">You've completed the HTML Learning Project! You now understand the fundamentals of HTML and can create your own web pages. Keep practicing and building projects to strengthen your skills.</p>
+            <p class="fw-bold mb-0 text-white">By Feri Febriansyah</p>
+        </footer>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
